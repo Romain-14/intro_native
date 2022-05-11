@@ -9,13 +9,10 @@ const RequireAuth = () => {
         ...state.userReducer
     })) 
     
-    console.log(infos);
-    console.log(isLogged);
-
     if(isLogged){
-        return <LogoutRoute /> 
+        return <LogoutRoute/> 
     } else {
-        return <LoginRoute />
+        return <LoginRoute/>
     }
 
 };

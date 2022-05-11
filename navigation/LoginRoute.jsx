@@ -4,10 +4,9 @@ import React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons  } from "@expo/vector-icons";
 import HomeScreen from '../screens/Home';
-import ShopScreen from '../screens/Shop';
 import LoginScreen from '../screens/user/Login';
 
-const LogoutRoute = () => {
+const LoginRoute = () => {
 
     const Stack = createBottomTabNavigator();
 
@@ -35,7 +34,7 @@ const LogoutRoute = () => {
                         headerShown: false,
                     })}
             >
-           
+                
                 <Stack.Screen name="Home" component={HomeScreen}/>
                 <Stack.Screen name="Login" component={LoginScreen}/>
             </Stack.Navigator>
@@ -44,6 +43,6 @@ const LogoutRoute = () => {
   )
 }
 
-export default LogoutRoute
+export default LoginRoute;
 
 const styles = StyleSheet.create({})

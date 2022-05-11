@@ -1,24 +1,32 @@
-import React from "react";
+import {useSelector} from 'react-redux'
 import { Button, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({navigation,}) => {
+    
+    const {infos, isLogged} = useSelector((state)=> ({
+        ...state.userReducer
+    })) 
+    
     return (
         <View style={styles.mainCtn}>
             <StatusBar style="auto" />
             
             <View style={[styles.ctn, styles.ctn1]}>
                 <Text>Home Screen</Text>
-                <Text>container 1</Text>
+                {
+                    isLogged && <Text>Welcome, {infos.alias}</Text>
+                }
+                
             </View>
 
             <View style={[styles.ctn, styles.ctn2]}>
-                <Button title="Go to Blog" onPress={() => navigation.navigate('Blog')}/>
+                <Button title="Go to Shop" onPress={() => navigation.navigate('Shop')}/>
             </View>
 
-            <View style={[styles.ctn, styles.ctn3]}>
+            {/* <View style={[styles.ctn, styles.ctn3]}>
                 <Button title="Go to Contact" onPress={() => navigation.navigate('Contact')}/>
-            </View>
+            </View> */}
 
         </View>
     );

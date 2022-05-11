@@ -11,11 +11,7 @@ const Logout = () => {
         dispatch(logout());
     }, [])
 
-  return (
-    <View>
-      <Text>Logout</Text>
-    </View>
-  )
+    return null
 }
 
 export default Logout;

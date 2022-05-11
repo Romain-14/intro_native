@@ -1,5 +1,4 @@
 import {NavigationContainer} from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons  } from "@expo/vector-icons";
@@ -8,7 +7,7 @@ import ShopScreen from '../screens/Shop';
 import LogoutScreen from '../screens/user/Logout';
 
 const LogoutRoute = () => {
-
+    
     const Stack = createBottomTabNavigator();
 
   return (
@@ -33,9 +32,11 @@ const LogoutRoute = () => {
                         tabBarActiveTintColor: "blue",
                         tabBarInactiveTintColor: "grey",
                         headerShown: false,
-                    })}
+                    })
+                }
+                
             >
-                <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Shop" component={ShopScreen}/>
                 <Stack.Screen name="Logout" component={LogoutScreen}/>
             </Stack.Navigator>
@@ -44,6 +45,4 @@ const LogoutRoute = () => {
   )
 }
 
-export default LogoutRoute
-
-const styles = StyleSheet.create({})
+export default LogoutRoute;
